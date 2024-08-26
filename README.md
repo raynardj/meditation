@@ -1,0 +1,2 @@
+# meditation
+Aurelius style meditation
