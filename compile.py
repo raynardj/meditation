@@ -80,6 +80,6 @@ year_readme_txt = (ROOT / "README.md").read_text()
 with open(ROOT / "README.md", "w") as f:
     year_readmes = year_readme_txt.split("<hr>")
     year_readmes[1] = (
-        "\n" + "\n".join(list(f"- [{year_name} {year_slug}]({year_name})" for year_name, year_slug in years)) + "\n"
+        "\n" + "\n".join(list(f"- [{year_name} {year_slug}]({year_slug})" for year_name, year_slug in years)) + "\n"
     )
     f.write("<hr>".join(year_readmes))
