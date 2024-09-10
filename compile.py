@@ -63,7 +63,7 @@ for year_slug in matching_folders:
             f.write(f"- {month_path.name}\n")
             print(f"compile month: {month_path}")
             month_number = month_path.name
-            f.write(f"Month [{month_number}]({month_number})\n")
+            f.write(f"🗓️ [{month_number}]({month_number})\n")
 
             month_name = month_path.name
             month_readme = month_path / "README.md"
