@@ -1,0 +1,40 @@
+name: ⭐️ Compile and Commit
+
+on:
+  push:
+    branches:
+      - '*'  # Runs on all branches
+  workflow_dispatch:  # Allows manual triggering
+
+jobs:
+  compile-and-commit:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+  
+    - name: Run compile script
+      run: python compile.py
+
+    - name: Commit changes
+      run: |
+        git config --local user.email "b2ray2c@gmail.com"
+        git config --local user.name "raynardj"
+        git add .
+        git diff --quiet && git diff --staged --quiet || git commit -m "⭐️ Auto content table"
+
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: ${{ github.ref }}
