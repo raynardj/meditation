@@ -32,7 +32,7 @@ def find_month_folders(path):
 
 def find_day_folder(path):
     days = []
-    for day in path.glob("*.md"):
+    for day in sorted(list(path.glob("*.md"))):
         if day.stem != "README":
             days.append(day.stem)
     return days
