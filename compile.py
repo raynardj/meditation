@@ -30,6 +30,14 @@ def find_month_folders(path):
     return sorted(month_folders)
 
 
+def find_day_folder(path):
+    days = []
+    for day in path.glob("*.md"):
+        if day.stem != "README":
+            days.append(day.stem)
+    return days
+
+
 matching_folders = find_matching_folders(ROOT)
 
 for folder in matching_folders:
@@ -47,5 +55,14 @@ for folder in matching_folders:
         f.write("## Months\n\n")
         for month in month_found:
             f.write(f"- {month}\n")
+
+    for month_path in find_month_folders(year_path):
+        month = month_path.name
+        month_readme = month_path / "README.md"
+        with open(month_readme, "w") as f:
+            print(f"Write month readme {folder} - {month}")
+            f.write(f"# {folder} - {month}")
+            for day in find_day_folder(month_path):
+                f.write(f"* [{day}]({day})")
 
     print(f"README.md under {year_path}: {readme_path}")
