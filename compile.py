@@ -63,6 +63,6 @@ for folder in matching_folders:
             print(f"Write month readme {folder} - {month}")
             f.write(f"# {folder} - {month}")
             for day in find_day_folder(month_path):
-                f.write(f"* [{day}]({day})")
+                f.write(f"* [{day}]({day})\n")
 
     print(f"README.md under {year_path}: {readme_path}")
