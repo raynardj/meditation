@@ -38,7 +38,7 @@ for folder in matching_folders:
     for month_folder in find_month_folders(year_path):
         print(f"compile month: {month_folder}")
         month_number = month_folder.name
-        month_found.append(f"Month [{month_number}]({folder.name}/{month_number})")
+        month_found.append(f"Month [{month_number}]({month_number})")
 
         # Write the README for this year
     readme_path = year_path / "README.md"
