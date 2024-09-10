@@ -60,10 +60,9 @@ for year_slug in matching_folders:
 
         # Month by month
         for month_path in find_month_folders(year_path):
-            f.write(f"- {month_path.name}\n")
             print(f"compile month: {month_path}")
             month_number = month_path.name
-            f.write(f"🗓️ [{month_number}]({month_number})\n")
+            f.write(f"- 🗓️ [{month_number}]({month_number})\n")
 
             month_name = month_path.name
             month_readme = month_path / "README.md"
