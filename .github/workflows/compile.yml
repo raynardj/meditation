@@ -24,13 +24,13 @@ jobs:
       run: |
         python -m pip install --upgrade pip
   
-    - name: Run compile script
+    - name: 🚀 Run compile script
       run: python compile.py
 
     - name: Commit changes
       run: |
-        git config --local user.email "b2ray2c@gmail.com"
         git config --local user.name "raynardj"
+        git config --local user.email "b2ray2c@gmail.com"
         git add .
         git diff --quiet && git diff --staged --quiet || git commit -m "⭐️ Auto compile links"
 
