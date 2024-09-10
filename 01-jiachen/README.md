@@ -2,5 +2,5 @@
 
 ## Months
 
-- Month [08](01-jiachen/08)
-- Month [09](01-jiachen/09)
+- Month [08](08)
+- Month [09](09)
