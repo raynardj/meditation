@@ -37,5 +37,6 @@ jobs:
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
-        github_token: ${{ secrets.GH_PAT }}
+      # You have to set up repo Settings > Actions > General > Workflow permissions
+        github_token: ${{ secrets.GITHUB_TOKEN }}
         branch: ${{ github.ref }}
