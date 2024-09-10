@@ -61,7 +61,7 @@ for folder in matching_folders:
         month_readme = month_path / "README.md"
         with open(month_readme, "w") as f:
             print(f"Write month readme {folder} - {month}")
-            f.write(f"# {folder} - {month}")
+            f.write(f"# {folder} - {month}\n\n")
             for day in find_day_folder(month_path):
                 f.write(f"* [{day}]({day})\n")
 
