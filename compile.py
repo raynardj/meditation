@@ -42,6 +42,7 @@ matching_folders = find_year_folders(ROOT)
 
 YEARS = {
     "01-jiachen": "2024 甲辰年",
+    "03-bingwu": "2026 丙午年",
 }
 
 # Year by year
